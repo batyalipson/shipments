@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/d_tab_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="aaa\naa"
+        android:textColor="@color/blue_bg"
+        android:textSize="@dimen/text_size_sub_title"/>
+
+    <TextView
+        android:id="@+id/d_tab_offers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:background="@drawable/style_red_circle"
+        android:minHeight="15dp"
+        android:minWidth="15dp"
+        android:gravity="center"
+        android:padding="1dp"
+        android:textSize="@dimen/text_size_x_small"
+        android:textColor="@android:color/white"
+        android:layout_toRightOf="@+id/d_tab_content"
+        android:layout_alignTop="@+id/d_tab_content"
+        android:layout_marginLeft="@dimen/xx_small_margin"
+        android:visibility="gone"/>
+
+</RelativeLayout>

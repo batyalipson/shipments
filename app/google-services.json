@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "828653152019",
+    "firebase_url": "https://fir-truckies.firebaseio.com",
+    "project_id": "firebase-truckies",
+    "storage_bucket": "firebase-truckies.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828653152019:android:da0b3e9a55d7ce97",
+        "android_client_info": {
+          "package_name": "com.shtibel.truckies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "828653152019-cslm3sq1sfa8fsr3qjtt46rg82q5bc1j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shtibel.truckies",
+            "certificate_hash": "4E6DEDF2B4DA75C375D2F4E0A152F098AB806FAD"
+          }
+        },
+        {
+          "client_id": "828653152019-p92jc4ih0ldhh9s17crq5424brm8nvcg.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "828653152019-avtf43jt371fq18sv1gmhjqoac2cfq8d.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "828653152019-ls56hugo7b0ka67r0bu9kps47n3abdg1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHyCAbN8qO9sr4ICbTh9yd04E1DPOGt2g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "828653152019-p92jc4ih0ldhh9s17crq5424brm8nvcg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "828653152019-792d7su29gu7kqssal9b3jmnbihr9e5s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.asaf.truckies"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

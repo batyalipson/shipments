@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/style_popup_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/style_light_blue_title">
+
+        <TextView
+            android:id="@+id/popup_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="popup title"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_title"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/medium_margin"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/popup_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:padding="25dp">
+            <TextView
+                android:id="@+id/popup_content_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="content text content text content text content text content text content text"
+                android:textSize="@dimen/text_size_sub_title"
+                android:textColor="@color/text_grey"/>
+
+
+            <LinearLayout
+                android:id="@+id/popup_content_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/popup_content_text"
+                android:layout_marginTop="@dimen/medium_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dfadfa"
+                    android:textColor="@color/text_grey"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/large_margin">
+
+        <Button
+            android:id="@+id/popup_ok_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/style_green_btn"
+            android:text="@string/ok"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_sub_title"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginRight="@dimen/small_margin"
+            android:paddingRight="@dimen/small_padding"
+            android:paddingLeft="@dimen/small_padding"
+            android:minWidth="55dp"/>
+        <Button
+            android:id="@+id/popup_custom_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/style_green_btn"
+            android:text="custom txt"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_sub_title"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginRight="@dimen/small_margin"
+            android:paddingRight="@dimen/small_padding"
+            android:paddingLeft="@dimen/small_padding"
+            android:visibility="gone"/>
+        <Button
+            android:id="@+id/popup_cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/style_blue_btn"
+            android:text="@string/cancel"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_sub_title"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginLeft="@dimen/small_margin"
+            android:paddingRight="@dimen/small_padding"
+            android:paddingLeft="@dimen/small_padding"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

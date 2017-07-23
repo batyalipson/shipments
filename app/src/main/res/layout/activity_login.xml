@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.shtibel.truckies.activities.login.LoginActivity"
+    android:background="@color/blue_bg">
+
+    <ImageView
+        android:id="@+id/login_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/splash1"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/login_logo_top"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/truckies_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:adjustViewBounds="true"
+        android:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/login_logo_center"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/truckies_logo2"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:visibility="visible"/>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/login_details"
+        android:visibility="visible">
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/login_email"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:textSize="20sp"-->
+            <!--android:layout_marginBottom="10dp"/>-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/field_button_height"
+            >
+
+            <!--<TextView-->
+                <!--android:id="@+id/login_start"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="@dimen/field_button_height"-->
+                <!--android:background="@drawable/style_login_field"-->
+                <!--android:text="@string/start_phone"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:paddingLeft="@dimen/medium_padding"-->
+                <!--android:paddingRight="@dimen/medium_padding"-->
+                <!--android:layout_marginRight="@dimen/medium_margin"-->
+                <!--android:textSize="@dimen/text_size_sub_title"-->
+                <!--android:gravity="center"/>-->
+
+            <EditText
+                android:id="@+id/login_phone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/field_button_height"
+                android:background="@drawable/style_login_field"
+                android:inputType="phone"
+                android:hint="@string/phone"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                android:maxLength="12"/>
+
+        </RelativeLayout>
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/login_password"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:textSize="20sp"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:layout_marginBottom="10dp"/>-->
+        <!--<EditText-->
+            <!--android:id="@+id/login_password"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/field_button_height"-->
+            <!--android:background="@drawable/style_login_field"-->
+            <!--android:inputType="textPassword"-->
+            <!--android:paddingRight="5dp"-->
+            <!--android:paddingLeft="5dp"-->
+            <!--android:hint="@string/password"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:textColorHint="@android:color/white"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_marginTop="@dimen/large_margin"/>-->
+
+        <LinearLayout
+            android:id="@+id/login_agree_terms_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large_margin"
+            android:layout_gravity="center"
+            android:visibility="visible">
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/login_agree_terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTint="@android:color/white"
+                android:textColor="@android:color/white"
+                android:textStyle="italic"
+                android:textSize="@dimen/text_size_sub_title" />
+
+            <TextView
+                android:id="@+id/login_agree_terms_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textStyle="italic"
+                android:textSize="@dimen/text_size_sub_title"
+                android:text="@string/agree_to_terms"
+                android:layout_marginLeft="@dimen/medium_margin"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large_margin">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/field_button_height"
+                android:background="@drawable/style_login_btn"
+                android:text="@string/get_password"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:onClick="login"/>
+            <ProgressBar
+                android:id="@+id/login_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                android:translationZ="2dp"/>
+
+        </RelativeLayout>
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/forgot_password"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:textStyle="italic"-->
+            <!--android:textSize="@dimen/text_size_sub_title"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginTop="@dimen/x_large_margin"-->
+            <!--android:padding="10dp"-->
+            <!--android:onClick="getNewPassword"/>-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/to_sign_up"
+            android:textColor="@android:color/white"
+            android:textStyle="italic"
+            android:textSize="@dimen/text_size_sub_title"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:onClick="openSite"
+            android:visibility="gone"/>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

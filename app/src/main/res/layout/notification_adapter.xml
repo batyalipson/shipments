@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/medium_margin">
+
+
+    <com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/notification_adapter_swipe">
+        <!-- Bottom View Start-->
+
+        <LinearLayout
+            android:background="@android:color/transparent"
+            android:id="@+id/bottom_wrapper"
+            android:layout_width="wrap_content"
+            android:weightSum="1"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <!--What you want to show-->
+
+                <ImageView
+                    android:id="@+id/notification_adap_delete"
+                    android:layout_width="@dimen/medium_icon"
+                    android:layout_height="@dimen/medium_icon"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/small_margin"
+                    android:src="@drawable/delete_notification"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:background="@android:color/transparent"
+            android:id="@+id/top_wrapper"
+            android:layout_width="wrap_content"
+            android:weightSum="1"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <!--What you want to show-->
+
+            <ImageView
+                android:id="@+id/notification_adap_delete_left"
+                android:layout_width="@dimen/medium_icon"
+                android:layout_height="@dimen/medium_icon"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:src="@drawable/delete_notification"/>
+
+        </LinearLayout>
+
+        <!-- Bottom View End-->
+
+        <!-- Surface View Start -->
+
+        <LinearLayout
+            android:id="@+id/notification_adap_center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:id="@+id/notification_adap_center_inner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/medium_margin"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:background="@drawable/style_offers_jobs_content">
+                <RelativeLayout
+                    android:id="@+id/notification_adap_title_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:background="@drawable/style_light_blue_title">
+
+                    <ImageView
+                        android:id="@+id/notification_adap_image"
+                        android:layout_width="@dimen/small_icon"
+                        android:layout_height="@dimen/small_icon"
+                        android:src="@drawable/push_white_offer"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/small_margin"/>
+                    <TextView
+                        android:id="@+id/notification_adap_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/n_new_offer"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_size_sub_title"
+                        android:layout_toRightOf="@+id/notification_adap_image"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/small_margin"/>
+
+                    <TextView
+                        android:id="@+id/notification_adap_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="date"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textColor="@android:color/white"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/small_margin"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:layout_below="@+id/notification_adap_title_layout">
+
+                <TextView
+                    android:id="@+id/notification_adap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="content of notification"
+                    android:textColor="@color/text_grey"
+                    android:layout_margin="@dimen/medium_margin"
+                    android:layout_centerVertical="true"
+                    />
+
+            </RelativeLayout>
+
+                <ProgressBar
+                    android:id="@+id/notification_adap_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"/>
+
+            <!--What you want to show in SurfaceView-->
+        </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <!-- Surface View End -->
+
+
+    </com.daimajia.swipe.SwipeLayout>
+</RelativeLayout>

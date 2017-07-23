@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="#80ffffff"/>
+            <stroke android:color="@color/offers_jobs_border" android:width="1dp"/>
+            <corners android:radius="@dimen/normal_radius"></corners>
+        </shape>
+    </item>
+</layer-list>

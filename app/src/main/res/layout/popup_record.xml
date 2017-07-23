@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/style_popup_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/style_light_blue_title">
+
+        <TextView
+            android:id="@+id/popup_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/record"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_title"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/medium_margin"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/popup_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:padding="25dp">
+
+            <ImageView
+                android:id="@+id/popup_rec_play_pause"
+                android:layout_width="@dimen/large_icon"
+                android:layout_height="@dimen/large_icon"
+                android:src="@drawable/play_record"
+                android:layout_centerHorizontal="true"/>
+
+            <Chronometer
+                android:id="@+id/popup_rec_chronometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/text_size_sub_title"
+                android:layout_below="@+id/popup_rec_play_pause"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginBottom="@dimen/medium_margin"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/large_margin">
+
+        <Button
+            android:id="@+id/popup_rec_ok_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/style_green_btn"
+            android:text="@string/save"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_sub_title"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginRight="@dimen/small_margin"
+            android:paddingRight="@dimen/small_padding"
+            android:paddingLeft="@dimen/small_padding"/>
+        <Button
+            android:id="@+id/popup_custom_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/style_green_btn"
+            android:text="custom txt"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_sub_title"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginRight="@dimen/small_margin"
+            android:paddingRight="@dimen/small_padding"
+            android:paddingLeft="@dimen/small_padding"
+            android:visibility="gone"/>
+        <Button
+            android:id="@+id/popup_rec_cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/style_blue_btn"
+            android:text="@string/close"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_sub_title"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginLeft="@dimen/small_margin"
+            android:paddingRight="@dimen/small_padding"
+            android:paddingLeft="@dimen/small_padding"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="strong_blue">#0b4e78</color>
+    <color name="blue_bg">#378EB9</color>
+    <color name="green">#39B54A</color>
+    <color name="strong_green">#1D993B</color>
+    <color name="red">#FD553A</color>
+    <color name="grey">#F5F7FA</color>
+    <color name="border_grey">#D1D5D7</color>
+    <color name="text_grey">#656565</color>
+    <color name="tab_border_color">#D1D5D7</color>
+    <color name="offers_jobs_title_grey">#FAFAFA</color>
+    <color name="offers_jobs_border">#cfdbe2</color>
+    <color name="orange">#FF902B</color>
+    <color name="rate_orange">#F9B320</color>
+    <color name="drawer_border">#6A6A6B</color>
+    <color name="light_blue">#378EB9</color>
+    <color name="drawer_color">#80000000</color>
+    <color name="account_grey">#B2B2B2</color>
+    <color name="notification_grey">#E0E3E4</color>
+    <color name="hint_gray">#a8a8a8</color>
+</resources>

@@ -1,0 +1,61 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="row_icon">17dp</dimen>
+    <dimen name="xx_small_icon">15dp</dimen>
+    <dimen name="x_small_icon">20dp</dimen>
+    <dimen name="small_icon">25dp</dimen>
+    <dimen name="medium_icon">40dp</dimen>
+    <dimen name="large_icon">50dp</dimen>
+    <dimen name="x_large_icon">60dp</dimen>
+
+    <dimen name="x_large_padding">25dp</dimen>
+    <dimen name="large_padding">15dp</dimen>
+    <dimen name="medium_padding">10dp</dimen>
+    <dimen name="small_padding">5dp</dimen>
+    <dimen name="x_small_padding">3dp</dimen>
+
+    <dimen name="xx_small_margin">2dp</dimen>
+    <dimen name="x_small_margin">3dp</dimen>
+    <dimen name="small_margin">5dp</dimen>
+    <dimen name="medium_margin">10dp</dimen>
+    <dimen name="large_margin">15dp</dimen>
+    <dimen name="x_large_margin">25dp</dimen>
+
+    <dimen name="text_size_xxlarge">25sp</dimen>
+    <dimen name="text_size_large_title">20sp</dimen>
+    <dimen name="text_size_title">18sp</dimen>
+    <dimen name="text_size_sub_title">16sp</dimen>
+    <dimen name="row_text_size">15sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_x_small">10sp</dimen>
+
+    <dimen name="tabs_round_corners">18dp</dimen>
+    <dimen name="tabs_title_height">40dp</dimen>
+    <dimen name="toolbar_height">60dp</dimen>
+
+    <dimen name="button_height">40dp</dimen>
+    <dimen name="panel_height">90dp</dimen>
+    <dimen name="offer_panel_height">116dp</dimen>
+    <dimen name="left_button_width">60dp</dimen>
+    <dimen name="map_height">200dp</dimen>
+    <dimen name="marker_height">80px</dimen>
+    <dimen name="marker_width">50px</dimen>
+    <dimen name="field_button_height">45dp</dimen>
+    <dimen name="normal_radius">5dp</dimen>
+    <dimen name="map_icon_height">65dp</dimen>
+    <dimen name="map_icon_width">41dp</dimen>
+    <dimen name="map_truck_icon">45dp</dimen>
+
+    <dimen name="support_size">25dp</dimen>
+
+    <dimen name="radius_1">100dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+
+    <dimen name="conf_field_height">45dp</dimen>
+
+    <dimen name="delete_button">30dp</dimen>
+</resources>

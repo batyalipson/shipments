@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.shtibel.truckies.activities.offer.OfferActivity"
+    android:background="@android:color/white">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_height="@dimen/toolbar_height"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/offer_action_bar"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:background="@android:color/white">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="@dimen/left_button_width"
+                android:layout_height="match_parent"
+                android:onClick="close"
+                android:id="@+id/menu_wrapper">
+            <ImageView
+                android:layout_width="@dimen/x_small_icon"
+                android:layout_height="@dimen/x_small_icon"
+                android:src="@drawable/arrow"
+                android:scaleType="centerInside"
+                android:layout_marginLeft="@dimen/medium_margin"
+                android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <ImageView
+                android:layout_width="@dimen/support_size"
+                android:layout_height="@dimen/support_size"
+                android:src="@drawable/dashboard_support_gray"
+                android:layout_toRightOf="@+id/menu_wrapper"
+                android:layout_centerVertical="true"
+                android:onClick="goToSupport"/>
+
+            <TextView
+                android:id="@+id/offer_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/offer_t"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/strong_blue"
+                android:textSize="@dimen/text_size_sub_title"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/large_margin"
+                android:background="@drawable/style_switch_btn"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp">
+
+                <TextView
+                    android:id="@+id/offer_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$1234"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@android:color/black"/>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/offer_sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        sothree:umanoPanelHeight="@dimen/offer_panel_height"
+        sothree:umanoShadowHeight="0dp"
+        sothree:umanoFadeColor="@android:color/transparent"
+        android:background="@android:color/transparent"
+        sothree:umanoOverlay="true"
+        android:layout_below="@+id/offer_action_bar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/offer_map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_marginTop="98dp"/>
+
+            <Button
+                android:id="@+id/offer_accept_offer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/style_offer_button_bg"
+                android:layout_marginBottom="@dimen/medium_margin"
+                android:layout_marginLeft="@dimen/medium_margin"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:text="@string/accept_offer"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_sub_title"
+                android:textStyle="bold"
+                android:onClick="acceptOffer"
+                style="?android:attr/borderlessButtonStyle"/>
+            <ProgressBar
+                android:id="@+id/offer_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/offer_slide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/offer_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grey">
+
+                <ScrollView
+                    android:id="@+id/offer_details_scroll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/offer_rout_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/medium_margin"
+                            android:layout_marginRight="@dimen/medium_margin"
+                            android:layout_marginTop="@dimen/medium_margin"
+                            android:background="@drawable/style_offers_jobs_content"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/offer_rout_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:background="@drawable/style_offers_jobs_title"
+                                android:text="@string/route"
+                                android:textSize="@dimen/text_size_sub_title"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_grey"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/medium_padding"/>
+
+                            <RelativeLayout
+                                android:id="@+id/offer_origin_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/offer_rout_title"
+                                android:paddingRight="@dimen/medium_margin"
+                                android:paddingLeft="@dimen/medium_margin"
+                                android:paddingTop="@dimen/medium_padding"
+                                android:paddingBottom="@dimen/medium_padding">
+
+                                <LinearLayout
+                                    android:id="@+id/offer_origin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:id="@+id/offer_pickup_title"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/pickup"
+                                        android:textSize="@dimen/text_size_normal"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/text_grey"
+                                        android:layout_toRightOf="@+id/offer_pickup_img"
+                                        android:layout_marginLeft="@dimen/small_margin"/>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginTop="@dimen/medium_margin">
+                                        <ImageView
+                                            android:id="@+id/offer_from_img"
+                                            android:layout_width="@dimen/xx_small_icon"
+                                            android:layout_height="wrap_content"
+                                            android:src="@drawable/origin_icon"
+                                            android:adjustViewBounds="true"/>
+
+                                        <TextView
+                                            android:id="@+id/offer_origin_address"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="harav yeshayahu meshorer 25, patah tikva"
+                                            android:textSize="@dimen/text_size_normal"
+                                            android:textColor="@color/text_grey"
+                                            android:layout_marginLeft="@dimen/small_margin"/>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/offer_pickup"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/small_margin">
+
+                                        <ImageView
+                                            android:id="@+id/offer_pickup_img"
+                                            android:layout_width="@dimen/xx_small_icon"
+                                            android:layout_height="@dimen/xx_small_icon"
+                                            android:src="@drawable/pickup"/>
+
+                                        <TextView
+                                            android:id="@+id/offer_pickup_date"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="17:30-21:30 21/07/2016"
+                                            android:textColor="@color/text_grey"
+                                            android:textSize="@dimen/text_size_normal"
+                                            android:layout_marginLeft="@dimen/small_margin"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/offer_instruction_origin_layout"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/small_margin"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:id="@+id/job_special_instruction_origin"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="aaa"
+                                            android:textColor="@color/text_grey"
+                                            android:textSize="@dimen/text_size_normal"/>
+
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/offer_rout_divider"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/offer_origin_details">
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/offers_jobs_border"/>
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/root_divider"
+                                    android:adjustViewBounds="true"
+                                    android:layout_centerHorizontal="true"/>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/offer_destination_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/offer_rout_divider"
+                                android:paddingRight="@dimen/medium_margin"
+                                android:paddingLeft="@dimen/medium_margin"
+                                android:paddingTop="@dimen/small_padding"
+                                android:paddingBottom="@dimen/medium_padding">
+
+                                <LinearLayout
+                                    android:id="@+id/offer_destination"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/offer_dropoff_title"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/dropoff"
+                                        android:textSize="@dimen/text_size_normal"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/text_grey"
+                                        android:layout_toRightOf="@+id/offer_dropoff_img"
+                                        android:layout_marginLeft="@dimen/small_margin"/>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/medium_margin">
+                                        <ImageView
+                                            android:id="@+id/offer_to_img"
+                                            android:layout_width="@dimen/xx_small_icon"
+                                            android:layout_height="wrap_content"
+                                            android:src="@drawable/destination_icon"
+                                            android:adjustViewBounds="true"/>
+                                        <TextView
+                                            android:id="@+id/offer_destination_address"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="alenby 106,allenby street, tel aviv-yafo"
+                                            android:textSize="@dimen/text_size_normal"
+                                            android:textColor="@color/text_grey"
+                                            android:layout_marginLeft="@dimen/small_margin"/>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/offer_dropoff"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/small_margin">
+
+                                        <ImageView
+                                            android:id="@+id/offer_dropoff_img"
+                                            android:layout_width="@dimen/xx_small_icon"
+                                            android:layout_height="@dimen/xx_small_icon"
+                                            android:src="@drawable/dropoff"/>
+
+                                        <TextView
+                                            android:id="@+id/offer_dropoff_date"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="17:30-21:30 21/07/2016"
+                                            android:textColor="@color/text_grey"
+                                            android:textSize="@dimen/text_size_normal"
+                                            android:layout_marginLeft="@dimen/small_margin"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/offer_instruction_dest_layout"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/small_margin"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:id="@+id/job_special_instruction_dest"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="bbb"
+                                            android:textColor="@color/text_grey"
+                                            android:textSize="@dimen/text_size_normal"/>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/offer_load_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/medium_margin"
+                            android:layout_marginRight="@dimen/medium_margin"
+                            android:layout_marginTop="@dimen/medium_margin"
+                            android:background="@drawable/style_offers_jobs_content"
+                            android:layout_below="@+id/offer_rout_layout">
+
+                            <TextView
+                                android:id="@+id/offer_load_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:background="@drawable/style_offers_jobs_title"
+                                android:text="@string/truck"
+                                android:textSize="@dimen/text_size_sub_title"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_grey"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/medium_padding"/>
+
+                            <LinearLayout
+                                android:id="@+id/offer_load_otems_container"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingRight="@dimen/medium_margin"
+                                android:paddingLeft="@dimen/medium_margin"
+                                android:paddingTop="@dimen/medium_padding"
+                                android:paddingBottom="@dimen/medium_padding"
+                                android:layout_below="@+id/offer_load_title">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/xx_small_icon"
+                                        android:layout_height="@dimen/xx_small_icon"
+                                        android:src="@drawable/box"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="12 boxes 12*12*12cm, weight 122kg"
+                                        android:layout_marginLeft="@dimen/small_margin"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/small_margin">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/xx_small_icon"
+                                        android:layout_height="@dimen/xx_small_icon"
+                                        android:src="@drawable/box"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="12 boxes 12*12*12cm, weight 122kg"
+                                        android:layout_marginLeft="@dimen/small_margin"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/offer_specials_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/medium_margin"
+                            android:layout_marginRight="@dimen/medium_margin"
+                            android:layout_marginTop="@dimen/medium_margin"
+                            android:background="@drawable/style_offers_jobs_content"
+                            android:layout_below="@+id/offer_load_layout">
+
+                            <TextView
+                                android:id="@+id/offer_specials_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:background="@drawable/style_offers_jobs_title"
+                                android:text="@string/special_requests"
+                                android:textSize="@dimen/text_size_sub_title"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_grey"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/medium_padding"/>
+
+                            <LinearLayout
+                                android:id="@+id/offer_specials_big_images"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingRight="@dimen/medium_margin"
+                                android:paddingLeft="@dimen/medium_margin"
+                                android:paddingTop="@dimen/medium_padding"
+                                android:paddingBottom="@dimen/medium_padding"
+                                android:orientation="horizontal"
+                                android:layout_below="@+id/offer_specials_title">
+
+                                <ImageView
+                                    android:layout_width="@dimen/small_icon"
+                                    android:layout_height="@dimen/small_icon"
+                                    android:src="@drawable/box"/>
+
+                                <ImageView
+                                    android:layout_width="@dimen/small_icon"
+                                    android:layout_height="@dimen/small_icon"
+                                    android:src="@drawable/box"
+                                    android:layout_marginLeft="@dimen/medium_margin"/>
+
+                                <ImageView
+                                    android:layout_width="@dimen/small_icon"
+                                    android:layout_height="@dimen/small_icon"
+                                    android:src="@drawable/box"
+                                    android:layout_marginLeft="@dimen/medium_margin"/>
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/offer_comments_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/medium_margin"
+                            android:layout_marginRight="@dimen/medium_margin"
+                            android:layout_marginTop="@dimen/medium_margin"
+                            android:background="@drawable/style_offers_jobs_content"
+                            android:layout_below="@+id/offer_specials_layout">
+
+                            <TextView
+                                android:id="@+id/offer_comments_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:background="@drawable/style_offers_jobs_title"
+                                android:text="@string/comments"
+                                android:textSize="@dimen/text_size_sub_title"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_grey"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/medium_padding"/>
+
+                            <TextView
+                                android:id="@+id/offer_comments_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingRight="@dimen/medium_margin"
+                                android:paddingLeft="@dimen/medium_margin"
+                                android:paddingTop="@dimen/medium_padding"
+                                android:paddingBottom="@dimen/medium_padding"
+                                android:layout_below="@+id/offer_comments_title"
+                                android:text="free text free text free text free text free text free text free text"/>
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </ScrollView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/offer_drag_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/offer_details">
+                <!---->
+                <RelativeLayout
+                    android:id="@+id/offer_general_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:paddingTop="@dimen/medium_margin"
+                    android:paddingLeft="@dimen/medium_margin"
+                    android:paddingRight="@dimen/medium_margin"
+                    android:paddingBottom="@dimen/medium_margin"
+                    android:background="@color/grey">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:id="@+id/offer_general_pickup">
+                            <ImageView
+                                android:layout_width="@dimen/x_small_icon"
+                                android:layout_height="@dimen/x_small_icon"
+                                android:src="@drawable/pickup"/>
+                            <TextView
+                                android:id="@+id/offer_general_pickup_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="pickup tomorrow"
+                                android:layout_marginLeft="@dimen/small_margin"
+                                android:textColor="@color/strong_green"
+                                android:textSize="@dimen/text_size_sub_title"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_below="@+id/offer_general_pickup"
+                            android:layout_marginTop="@dimen/x_small_margin"
+                            android:id="@+id/offer_general_dropoff">
+                            <ImageView
+                                android:layout_width="@dimen/x_small_icon"
+                                android:layout_height="@dimen/x_small_icon"
+                                android:src="@drawable/dropoff"/>
+                            <TextView
+                                android:id="@+id/offer_general_dropoff_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="dropoff tomorrow"
+                                android:layout_marginLeft="@dimen/small_margin"
+                                android:textColor="@color/strong_green"
+                                android:textSize="@dimen/text_size_sub_title"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/x_small_margin"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:layout_below="@+id/offer_general_dropoff">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                >
+
+                                <ImageView
+                                    android:id="@+id/offers_general_boxes_icon"
+                                    android:layout_width="@dimen/row_icon"
+                                    android:layout_height="@dimen/row_icon"
+                                    android:src="@drawable/blue_box"
+                                    android:layout_marginRight="@dimen/xx_small_margin"/>
+
+                                <TextView
+                                    android:id="@+id/offers_general_boxes_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="10 boxes"
+                                    android:textSize="@dimen/text_size_sub_title"
+                                    android:textColor="@color/strong_blue"/>
+
+                                <ImageView
+                                    android:id="@+id/offers_general_pallets_icon"
+                                    android:layout_width="@dimen/row_icon"
+                                    android:layout_height="@dimen/row_icon"
+                                    android:src="@drawable/blue_pallet"
+                                    android:layout_marginRight="@dimen/xx_small_margin"
+                                    android:layout_marginLeft="@dimen/small_margin"/>
+
+                                <TextView
+                                    android:id="@+id/offers_general_pallets_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="10 pallets"
+                                    android:textSize="@dimen/text_size_sub_title"
+                                    android:textColor="@color/strong_blue"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/offer_special_images_layout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/small_margin"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="@dimen/xx_small_icon"
+                                    android:layout_height="@dimen/xx_small_icon"
+                                    android:src="@drawable/logo"/>
+
+                                <ImageView
+                                    android:layout_width="@dimen/xx_small_icon"
+                                    android:layout_height="@dimen/xx_small_icon"
+                                    android:src="@drawable/logo"
+                                    android:layout_marginLeft="@dimen/small_margin"/>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/offer_payment"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="230$"-->
+                        <!--android:textColor="@color/strong_green"-->
+                        <!--android:textSize="@dimen/text_size_title"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:layout_centerHorizontal="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:layout_alignParentRight="true"/>-->
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/offer_general_details"
+                    android:background="@android:color/transparent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/x_small_icon"
+                        android:src="@drawable/arrow_bottom"
+                        android:layout_centerHorizontal="true"
+                        android:adjustViewBounds="true"
+                        android:layout_marginTop="-2dp"
+                        android:scaleType="fitXY"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+</RelativeLayout>

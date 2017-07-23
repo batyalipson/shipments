@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.shtibel.truckies.activities.login.AgreeTermsActivity">
+
+    <ImageView
+        android:id="@+id/agree_terms_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/splash1"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/agree_terms_logo_top"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/truckies_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:adjustViewBounds="true"
+        android:visibility="visible"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/agree_terms_logo_top"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_above="@+id/agree_terms_footer">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="@dimen/large_margin"
+            android:layout_marginRight="@dimen/large_margin"
+
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/truckiez_terms"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_large_title"/>
+
+            <TextView
+                android:id="@+id/agree_terms_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_sub_title"
+                android:text="aaaa bbbb ccc ddddddddddddd aaaa bbbb ccc dddddddddd aaaa bbbb ccc dddddddddddddaaaa bbbb ccc ddddddddddaaaa bbbb cccsss dddddddddddddaaaa bbbb cddddfcc dddddddddddddaaaa bbbb ccc dddddddddddddaaaa bbbb ccc dddddddddddddaaaa bbbb ccc ddddddddddddd aaaa bbbb ccc dddddddddd aaaa bbbb ccc dddddddddddddaaaa bbbb ccc ddddddddddaaaa bbbb cccsss dddddddddddddaaaa bbbb cddddfcc dddddddddddddaaaa bbbb ccc dddddddddddddaaaa bbbb ccc dddddddddddddaaaa bbbb ccc ddddddddddddd aaaa bbbb ccc dddddddddd aaaa bbbb ccc dddddddddddddaaaa bbbb ccc ddddddddddaaaa bbbb cccsss dddddddddddddaaaa bbbb cddddfcc dddddddddddddaaaa bbbb ccc dddddddddddddaaaa bbbb ccc dddddddddddddaaaa bbbb ccc ddddddddddddd aaaa bbbb ccc dddddddddd aaaa bbbb ccc dddddddddddddaaaa bbbb ccc ddddddddddaaaa bbbb cccsss dddddddddddddaaaa bbbb cddddfcc dddddddddddddaaaa bbbb ccc dddddddddddddaaaa bbbb ccc ddddddddddddd"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:lineSpacingExtra="2dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/medium_margin"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:id="@+id/agree_terms_footer">
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/agree_terms_agree_terms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@android:color/white"
+            android:textColor="@android:color/white"
+            android:textStyle="italic"
+            android:textSize="@dimen/text_size_sub_title"
+            android:text="@string/agree_to_terms"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back_to_login"
+            android:textColor="@android:color/white"
+            android:textStyle="italic"
+            android:textSize="@dimen/text_size_sub_title"
+            android:padding="10dp"
+            android:onClick="goBack"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

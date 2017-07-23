@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.shtibel.truckies.activities.job.JobConfirmation"
+    android:background="@color/grey">
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_height="@dimen/toolbar_height"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/job_conf_action_bar"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:background="@android:color/white">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="@dimen/left_button_width"
+                android:layout_height="match_parent"
+                android:onClick="close"
+                android:id="@+id/menu_wrapper">
+                <ImageView
+                    android:layout_width="@dimen/x_small_icon"
+                    android:layout_height="@dimen/x_small_icon"
+                    android:src="@drawable/arrow"
+                    android:scaleType="centerInside"
+                    android:layout_marginLeft="@dimen/medium_margin"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <!--<ImageView-->
+                <!--android:layout_width="@dimen/support_size"-->
+                <!--android:layout_height="@dimen/support_size"-->
+                <!--android:src="@drawable/dashboard_support_gray"-->
+                <!--android:layout_toRightOf="@+id/menu_wrapper"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:onClick="goToSupport"/>-->
+
+            <TextView
+                android:id="@+id/job_conf_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/job_confirmation"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/strong_blue"
+                android:textSize="@dimen/text_size_sub_title"/>
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginRight="@dimen/large_margin"-->
+                <!--android:background="@drawable/style_switch_btn"-->
+                <!--android:padding="1dp">-->
+
+            <!--</RelativeLayout>-->
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@+id/job_conf_action_bar"-->
+        <!--android:layout_above="@+id/job_conf_footer">-->
+        <LinearLayout
+            android:id="@+id/job_conf_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/medium_padding"
+            android:paddingRight="@dimen/medium_padding"
+            android:paddingTop="@dimen/small_padding"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_below="@+id/job_conf_action_bar">
+
+            <LinearLayout
+                android:id="@+id/job_conf_more_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/driver_name_title"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textColor="@color/text_grey"
+                        android:paddingLeft="@dimen/small_padding"
+                        android:paddingRight="@dimen/small_padding"
+                        android:layout_marginRight="@dimen/small_margin"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/confirmation_date_title"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textColor="@color/text_grey"
+                        android:paddingLeft="@dimen/small_padding"
+                        android:paddingRight="@dimen/small_padding" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/conf_field_height"
+                    android:layout_marginTop="@dimen/small_margin">
+                    <TextView
+                        android:id="@+id/job_conf_driver_name"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/style_offers_jobs_content"
+                        android:textSize="@dimen/text_size_sub_title"
+                        android:textColor="@color/text_grey"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/small_padding"
+                        android:paddingRight="@dimen/small_padding"
+                        android:layout_marginRight="@dimen/small_margin"/>
+                    <TextView
+                        android:id="@+id/job_conf_date"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/style_offers_jobs_content"
+                        android:textSize="@dimen/text_size_sub_title"
+                        android:textColor="@color/text_grey"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/small_padding"
+                        android:paddingRight="@dimen/small_padding" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/job_conf_load_types"
+                android:layout_marginTop="@dimen/medium_margin"
+               >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/conf_field_height"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3.5"
+                        android:layout_marginRight="@dimen/small_margin">
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/style_offers_jobs_content" />
+
+                        <ImageView
+                            android:layout_width="@dimen/x_small_icon"
+                            android:layout_height="@dimen/x_small_icon"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/arrow_user"
+                            android:layout_marginRight="@dimen/small_margin"/>
+                    </RelativeLayout>
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.5"
+                        android:background="@drawable/style_offers_jobs_content"
+                        android:hint="@string/quantity"
+                        android:textSize="@dimen/text_size_sub_title"
+                        android:textColor="@color/text_grey"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/small_padding"
+                        android:paddingRight="@dimen/small_padding"
+                        android:layout_marginRight="@dimen/small_margin"
+                        android:imeOptions="actionDone"/>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5">
+                        <Button
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/style_switch_btn"
+                            android:text="X"
+                            android:textSize="@dimen/text_size_sub_title"
+                            android:textColor="@android:color/holo_red_dark"
+                            android:visibility="visible"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"/>
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/conf_field_height"
+            android:layout_marginTop="@dimen/small_margin"
+            android:orientation="horizontal"
+            >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/style_offers_jobs_content"
+                android:layout_weight="3.5"
+                android:layout_marginRight="@dimen/medium_margin">
+
+                <EditText
+                    android:id="@+id/job_conf_total_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignRight="@+id/job_conf_weight_divider"
+                    android:layout_alignEnd="@+id/job_conf_weight_divider"
+                    android:hint="@string/total_weight"
+                    android:textSize="@dimen/text_size_sub_title"
+                    android:textColor="@color/text_grey"
+                    android:paddingLeft="@dimen/small_padding"
+                    android:paddingRight="@dimen/small_padding"
+                    android:inputType="number"
+                    android:imeOptions="actionDone"/>
+
+                <View
+                    android:id="@+id/job_conf_weight_divider"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/offers_jobs_border"
+                    android:layout_toLeftOf="@+id/job_conf_weight"/>
+
+                <TextView
+                    android:id="@+id/job_conf_weight"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/ton_full_txt"
+                    android:textSize="@dimen/text_size_sub_title"
+                    android:textColor="@color/text_grey"
+                    android:gravity="center"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/job_conf_add_type"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+                <Button
+                    android:id="@+id/job_conf_plus_btn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/style_switch_btn"
+                    android:text="+"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/text_size_sub_title"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:padding="0dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/job_conf_plus_btn"
+                    android:text="@string/add_load_type"
+                    android:textColor="@color/text_grey"
+                    android:gravity="center"
+                    android:paddingLeft="1dp"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/job_conf_sender_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/conf_field_height"
+            android:background="@drawable/style_offers_jobs_content"
+            android:hint="@string/receiver_name"
+            android:paddingLeft="@dimen/small_padding"
+            android:paddingRight="@dimen/small_padding"
+            android:textSize="@dimen/text_size_sub_title"
+            android:textColor="@color/text_grey"
+            android:layout_marginTop="@dimen/small_margin"
+            android:singleLine="true"
+            android:imeOptions="actionDone"/>
+
+        <EditText
+            android:id="@+id/job_conf_confirmation_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/conf_field_height"
+            android:background="@drawable/style_offers_jobs_content"
+            android:hint="@string/confirmation_phone"
+            android:paddingLeft="@dimen/small_padding"
+            android:paddingRight="@dimen/small_padding"
+            android:layout_marginTop="@dimen/small_margin"
+            android:textSize="@dimen/text_size_sub_title"
+            android:textColor="@color/text_grey"
+            android:inputType="phone"
+            android:maxLength="12"
+            android:imeOptions="actionDone"/>
+
+
+
+
+
+    </LinearLayout>
+    <!--</ScrollView>-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/small_margin"
+        android:visibility="visible"
+        android:layout_below="@+id/job_conf_info"
+        android:layout_above="@+id/job_conf_footer"
+        android:paddingLeft="@dimen/medium_padding"
+        android:paddingRight="@dimen/medium_padding">
+
+        <com.github.gcacace.signaturepad.views.SignaturePad
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/job_conf_signature_pad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:penColor="@android:color/black"
+            android:background="@drawable/style_offers_jobs_content"
+            android:alpha=".5"
+            android:visibility="visible"/>
+        <TextView
+            android:id="@+id/job_conf_signature_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sender_signature"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/text_size_sub_title"
+            android:textColor="@color/text_grey"/>
+
+        <Button
+            android:id="@+id/job_conf_clear_signature"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:text="@string/clear"
+            android:background="@drawable/style_switch_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:textColor="@color/text_grey"
+            android:onClick="clearPad"/>
+
+        <ImageView
+            android:id="@+id/job_conf_signature_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/style_offers_jobs_content"
+            android:visibility="gone"
+            android:padding="@dimen/small_padding"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/job_conf_footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/conf_field_height"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginBottom="@dimen/medium_margin"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="@dimen/medium_padding"
+        android:paddingRight="@dimen/medium_padding">
+
+        <RelativeLayout
+            android:id="@+id/job_conf_driver_conf_wrapper"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:layout_marginRight="@dimen/medium_margin">
+            <Button
+                android:id="@+id/job_conf_driver_conf"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/style_job_button_bg"
+                android:text="@string/driver_confirmation"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_sub_title" />
+
+            <ProgressBar
+                android:id="@+id/job_conf_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                android:translationZ="2dp"/>
+        </RelativeLayout>
+        <Button
+            android:id="@+id/job_conf_close"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/style_job_button_bg"
+            android:text="@string/close"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_sub_title"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/style_job_offer_item_bg"
+    android:layout_marginBottom="@dimen/medium_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_toLeftOf="@+id/offers_adap_divider">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/medium_margin">
+                    <ImageView
+                        android:id="@+id/offers_adap_pickup_icon"
+                        android:layout_width="@dimen/x_small_icon"
+                        android:layout_height="@dimen/x_small_icon"
+                        android:src="@drawable/pickup"/>
+                    <TextView
+                        android:id="@+id/offers_adap_pickup_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12/14"
+                        android:layout_marginLeft="@dimen/small_margin"
+                        android:textSize="@dimen/text_size_sub_title"
+                        android:layout_toRightOf="@+id/offers_adap_pickup_icon"
+                        android:textColor="@color/text_grey"/>
+                    <TextView
+                        android:id="@+id/offers_adap_pickup_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12:00-13:00"
+                        android:layout_marginLeft="@dimen/small_margin"
+                        android:textSize="@dimen/text_size_sub_title"
+                        android:layout_toRightOf="@+id/offers_adap_pickup_icon"
+                        android:textColor="@color/text_grey"
+                        android:layout_below="@+id/offers_adap_pickup_date"
+                        android:layout_marginTop="@dimen/small_margin"/>
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/offers_adap_divider">
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#DFE7EC"/>
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="@dimen/small_icon"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/arrow_right"
+                    android:adjustViewBounds="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/offers_adap_divider">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/medium_margin">
+                    <ImageView
+                        android:id="@+id/offers_adap_dropoff_icon"
+                        android:layout_width="@dimen/x_small_icon"
+                        android:layout_height="@dimen/x_small_icon"
+                        android:src="@drawable/dropoff"/>
+                    <TextView
+                        android:id="@+id/offers_adap_dropoff_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12/14"
+                        android:layout_marginLeft="@dimen/small_margin"
+                        android:textSize="@dimen/text_size_sub_title"
+                        android:layout_toRightOf="@+id/offers_adap_dropoff_icon"
+                        android:textColor="@color/text_grey"/>
+                    <TextView
+                        android:id="@+id/offers_adap_dropoff_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12:00-13:00"
+                        android:layout_marginLeft="@dimen/small_margin"
+                        android:textSize="@dimen/text_size_sub_title"
+                        android:layout_toRightOf="@+id/offers_adap_dropoff_icon"
+                        android:textColor="@color/text_grey"
+                        android:layout_below="@+id/offers_adap_dropoff_date"
+                        android:layout_marginTop="@dimen/small_margin"/>
+                </RelativeLayout>
+            </RelativeLayout>
+            <!--<TextView-->
+                <!--android:id="@+id/offers_adap_status_txt"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:text="delivery status"-->
+                <!--android:textSize="@dimen/text_size_sub_title"-->
+                <!--android:layout_marginLeft="@dimen/medium_margin"/>-->
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/map_height">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/map_height"
+                android:background="@drawable/style_map_border"
+                android:layout_marginRight="1dp"
+                android:layout_marginLeft="1dp">
+                <ImageView
+                    android:id="@+id/offers_adap_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/map_height"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:src="@drawable/map_bg"
+                    android:tag="0"/>
+
+                <ProgressBar
+                    android:id="@+id/offers_adap_map_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/offers_adap_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$922"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_sub_title"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/large_margin"
+                android:layout_marginBottom="@dimen/large_margin"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/style_white_round_corners"
+                android:padding="@dimen/medium_padding"/>
+
+        </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/medium_margin"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp">
+
+                <ImageView
+                    android:id="@+id/offers_adap_boxes_icon"
+                    android:layout_width="@dimen/x_small_icon"
+                    android:layout_height="@dimen/x_small_icon"
+                    android:src="@drawable/box"
+                    android:layout_marginRight="@dimen/xx_small_margin"/>
+
+                <TextView
+                    android:id="@+id/offers_adap_boxes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10 boxes"
+                    android:textSize="@dimen/row_text_size"/>
+
+                <ImageView
+                    android:id="@+id/offers_adap_pallets_icon"
+                    android:layout_width="@dimen/x_small_icon"
+                    android:layout_height="@dimen/x_small_icon"
+                    android:src="@drawable/pallet"
+                    android:layout_marginRight="@dimen/xx_small_margin"
+                    android:layout_marginLeft="@dimen/small_margin"/>
+
+                <TextView
+                    android:id="@+id/offers_adap_pallets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6 pallets"
+                    android:textSize="@dimen/row_text_size"/>
+
+
+
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/medium_margin"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/offers_adap_kg_icon"
+                    android:layout_width="@dimen/x_small_icon"
+                    android:layout_height="@dimen/x_small_icon"
+                    android:src="@drawable/load_kg"
+                    android:layout_marginRight="@dimen/xx_small_margin"
+                    android:layout_marginLeft="@dimen/small_margin"/>
+
+                <TextView
+                    android:id="@+id/offers_adap_kg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.00kg"
+                    android:textSize="@dimen/row_text_size"/>
+
+                <LinearLayout
+                    android:id="@+id/offers_adap_specials"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/small_margin">
+
+
+                    <ImageView
+                        android:layout_width="@dimen/x_small_icon"
+                        android:layout_height="@dimen/x_small_icon"
+                        android:src="@drawable/pickup"
+                        />
+                    <ImageView
+                        android:layout_width="@dimen/x_small_icon"
+                        android:layout_height="@dimen/x_small_icon"
+                        android:src="@drawable/pickup"
+                        android:layout_marginLeft="@dimen/medium_margin"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/offers_adap_id"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="offer_#345"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:background="@drawable/style_id_background"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:paddingRight="@dimen/medium_padding"
+                android:paddingLeft="@dimen/medium_padding"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

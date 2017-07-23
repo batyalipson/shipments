@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.shtibel.truckies.activities.job.SpecialLoadActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_height="@dimen/toolbar_height"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/specials_action_bar"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:background="@android:color/white">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="@dimen/left_button_width"
+                android:layout_height="match_parent"
+                android:onClick="close">
+                <ImageView
+                    android:layout_width="@dimen/x_small_icon"
+                    android:layout_height="@dimen/x_small_icon"
+                    android:src="@drawable/arrow"
+                    android:scaleType="centerInside"
+                    android:layout_marginLeft="@dimen/medium_margin"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/specials_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/specials_loads"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/strong_blue"
+                android:textSize="@dimen/text_size_sub_title"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/large_margin"
+                android:background="@drawable/style_switch_btn"
+                android:padding="1dp">
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/specials_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        android:layout_below="@+id/specials_action_bar" />
+
+</RelativeLayout>
